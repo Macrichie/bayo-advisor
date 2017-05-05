@@ -1,0 +1,65 @@
+body {
+  font-family: 'Noto Sans', sans-serif;
+  padding: 50px;
+  background-image: url("../images/bodybg2.jpg");
+  }
+
+section {
+  background-color:rgba(255,255,255,.9);
+}
+
+.sectiondivider {
+  margin:30px;
+}
+
+a {
+  color: #00B7FF;
+}
+
+.handleInput {
+  text-align: center;
+  margin-top: 100px;
+}
+
+.intro-text {
+  font-family: 'PT Serif', serif;
+  font-size: 4vmin;
+  color: rgba(0,0,0,0.8);
+  margin-bottom: 15px;
+}
+
+.aboutadvisor {
+  margin-top: 30px;
+}
+
+.heading {
+  color: rgba(37,157,255,1);
+}
+.aboutadvisor h1{
+  font-family: 'PT Serif', serif;
+  font-size: 7vmin;
+  line-height: 1.5em;
+}
+
+.aboutadvisor p {
+  line-height:2.5em;
+  font-size: 3vmin;
+}
+
+.profilesummary {
+  padding: 15px;
+  border-radius: 5px;
+}
+
+.profilesummarytext, .estimates {
+  font-size: 2.5vmin;
+  line-height: 2em;
+}
+
+.aboutyou {
+  background-color:rgba(255,255,255,0.8);
+}
+
+.estimates {
+  font-weight: bold;
+}

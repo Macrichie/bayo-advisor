@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>
+		<%= title %>
+	</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+	    crossorigin="anonymous">
+	<link href="https://fonts.googleapis.com/css?family=PT+Serif" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Noto+Sans" rel="stylesheet">
+	<link rel='stylesheet' href='/stylesheets/style.css' />
+	<link rel='stylesheet' href='/stylesheets/aos.css' />
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.17/d3.min.js"></script>
+	<script type="text/javascript" src="https://unpkg.com/personality-sunburst-chart@2.0.5/dist/index.js"></script>
+	<script src="https://d3js.org/d3-color.v1.min.js"></script>
+</head>
+
+<body>
+	<section class="homepage">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12 profilesummary">
+					<h1 class="heading">
+						<%= pageheading %>
+					</h1>
+					<p class="profilesummarytext">
+						<%= profilesummary %>
+					</p>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-4">
+					<p class="estimates heading">Personality Estimates:</p>
+					<div class="table-responsive">
+						<table class="table table-striped table-hover">
+							<tr class="info">
+								<th>VALUE</th>
+								<th>SCORE</th>
+							</tr>
+							<% for (const personality_trait of personality) { %>
+								<% if((personality_trait.hasOwnProperty("name")) && (personality_trait.hasOwnProperty("raw_score")) ) { %>
+									<tr>
+										<td>
+											<%= personality_trait.name%>
+										</td>
+										<td>
+											<%= Math.floor(personality_trait.raw_score*100) + " %" %>
+										</td>
+									</tr>
+									<% } %>
+										<% } %>
+						</table>
+					</div>
+				</div>
+				<div class="col-md-4">
+					<p class="estimates heading">Values Estimates:</p>
+					<div class="table-responsive">
+						<table class="table table-striped table-hover">
+							<tr class="info">
+								<th>VALUE</th>
+								<th>SCORE</th>
+							</tr>
+							<% for (const value_trait of values) { %>
+								<% if((value_trait.hasOwnProperty("name")) && (value_trait.hasOwnProperty("raw_score")) ) { %>
+									<tr>
+										<td>
+											<%= value_trait.name%>
+										</td>
+										<td>
+											<%= Math.floor(value_trait.raw_score*100) + " %" %>
+										</td>
+									</tr>
+									<% } %>
+										<% } %>
+						</table>
+					</div>
+				</div>
+				<div class="col-md-4">
+					<p class="estimates heading">Needs Estimates:</p>
+					<div class="table-responsive">
+						<table class="table table-striped table-hover">
+							<tr class="info">
+								<th>VALUE</th>
+								<th>SCORE</th>
+							</tr>
+							<% for (const need_trait of needs) { %>
+								<% if((need_trait.hasOwnProperty("name")) && (need_trait.hasOwnProperty("raw_score")) ) { %>
+									<tr>
+										<td>
+											<%= need_trait.name%>
+										</td>
+										<td>
+											<%= Math.floor(need_trait.raw_score*100) + " %" %>
+										</td>
+									</tr>
+									<% } %>
+										<% } %>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<div class="sectiondivider"></div>
+	<section class="homepage">
+		<div class="container">
+			<div class="row profilesummary">
+				<h1 data-aos="ease-in" class="heading">
+					<%= preferencesheading %>
+				</h1>
+				<p>You are:</p>
+				<ul>
+					<% for (const likes of likelypreference) { %>
+						<li>
+							<%= likes%>
+						</li>
+						<% } %>
+				</ul>
+				<p>You are:</p>
+				<ul>
+					<% for (const dislikes of unlikelypreference) { %>
+						<li>
+							<%= dislikes.replace(/Likely/i, 'Unlikely')%>
+						</li>
+						<% } %>
+				</ul>
+			</div>
+		</div>
+	</section>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+	    crossorigin="anonymous"></script>
+	<script src="/javascripts/aos.js"></script>
+	<script src="/javascripts/demo.js"></script>
+</body>
+
+</html>

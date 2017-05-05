@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>
+		<%= title %>
+	</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+	    crossorigin="anonymous">
+	<link href="https://fonts.googleapis.com/css?family=PT+Serif" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Noto+Sans" rel="stylesheet">
+	<link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+
+<body>
+	<section class="homepage">
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-md-5 aboutadvisor">
+				<h1 class="heading">Investment Advisor</h1>
+				<p>The Investment Advisor Demo combines IBM Watson Personality Insights and IBM Watson Tradeoff Analytics services to recommend suitable funds and agents for clients. Fund recommendation is based on a client's risk propensity. Agent recommendation focuses on building long-term relationships with clients.</p>
+				</div>
+
+				<div class="col-md-7 handleInput">
+					<p class="intro-text">To begin, tell us about yourself.</p>
+					<form class="form-inline" action="/profile" method = "POST">
+						<div class="form-group">
+								<textarea class="form-control" rows="12" cols="90" name="aboutyou" class="aboutyou"></textarea>
+						</div>
+						<br><br>
+						<button type="submit" class="btn btn-danger btn-lg">Continue</button>
+					</form>
+				</div>
+			</div>
+		</div>
+	</section>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+	    crossorigin="anonymous"></script>
+	<script src="/javascripts/demo.js"></script>
+</body>
+
+</html>
